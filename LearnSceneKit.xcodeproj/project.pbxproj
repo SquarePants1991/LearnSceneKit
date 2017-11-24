@@ -22,6 +22,7 @@
 		3D7FBA0D1FC7EE7C00B699DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D7FBA101FC7EE7C00B699DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D7FBA121FC7EE7C00B699DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D7FBA191FC7F2B300B699DC /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 			children = (
 				3D7FBA051FC7EE7C00B699DC /* LearnSceneKit */,
 				3D7FBA041FC7EE7C00B699DC /* Products */,
+				3D7FBA181FC7F2B300B699DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +64,14 @@
 				3D7FBA121FC7EE7C00B699DC /* Info.plist */,
 			);
 			path = LearnSceneKit;
+			sourceTree = "<group>";
+		};
+		3D7FBA181FC7F2B300B699DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D7FBA191FC7F2B300B699DC /* SceneKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
