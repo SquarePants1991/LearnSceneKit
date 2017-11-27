@@ -17,7 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="eJ5-vi-h0j" customClass="SCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vst-tu-XMJ">
+                                <rect key="frame" x="187.5" y="20" width="187.5" height="30"/>
+                                <state key="normal" title="下一个"/>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="A9T-MS-Cid" eventType="touchUpInside" id="kXx-6T-7RI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbE-py-LvQ">
+                                <rect key="frame" x="0.0" y="20" width="187.5" height="30"/>
+                                <state key="normal" title="上一个"/>
+                                <connections>
+                                    <action selector="prevButtonClicked:" destination="A9T-MS-Cid" eventType="touchUpInside" id="Znd-5z-pzl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DbE-py-LvQ" firstAttribute="leading" secondItem="ESn-cZ-dWF" secondAttribute="leading" id="1Vs-5q-If8"/>
+                            <constraint firstItem="Vst-tu-XMJ" firstAttribute="leading" secondItem="DbE-py-LvQ" secondAttribute="trailing" id="CjQ-Qe-GFR"/>
+                            <constraint firstItem="Vst-tu-XMJ" firstAttribute="width" secondItem="DbE-py-LvQ" secondAttribute="width" id="OQp-1V-JWC"/>
+                            <constraint firstItem="DbE-py-LvQ" firstAttribute="top" secondItem="ESn-cZ-dWF" secondAttribute="top" id="QAz-Sb-Nsi"/>
+                            <constraint firstItem="ESn-cZ-dWF" firstAttribute="trailing" secondItem="Vst-tu-XMJ" secondAttribute="trailing" id="Qxu-MA-BcJ"/>
+                            <constraint firstItem="Vst-tu-XMJ" firstAttribute="top" secondItem="ESn-cZ-dWF" secondAttribute="top" id="X8F-dA-Z0J"/>
+                            <constraint firstItem="Vst-tu-XMJ" firstAttribute="height" secondItem="DbE-py-LvQ" secondAttribute="height" id="iqH-8n-U27"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ESn-cZ-dWF"/>
                     </view>
                 </viewController>
