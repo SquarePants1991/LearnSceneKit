@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         scene = SCNScene()
         scene.background.contents = UIColor.black
         createCamera()
-        createLight()
+//        createLight()
         createGeometries()
         nextGeometry(1)
 
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
 
             scnView.allowsCameraControl = true
             scnView.showsStatistics = true
+            scnView.autoenablesDefaultLighting = true
         }
         
     }
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
     func createCamera() {
         let node = SCNNode()
         node.camera = SCNCamera()
-        node.position = SCNVector3.init(0, 0, 6)
+        node.position = SCNVector3.init(0, 0, 4.2)
         scene.rootNode.addChildNode(node)
     }
 
@@ -86,36 +87,14 @@ class ViewController: UIViewController {
     }
 
     func createGeometries() {
-        //SCNPlane, SCNBox, SCNSphere, SCNPyramid, SCNCone, SCNCylinder, SCNCapsule, SCNTube, and SCNTorus
-        addGeometry(SCNTorus.init(ringRadius: 0.5, pipeRadius: 0.1))
-        addGeometry(SCNPlane.init(width: 1, height: 1))
-        addGeometry(SCNBox.init(width: 1, height: 1, length: 1, chamferRadius: 0.3))
-        addGeometry(SCNSphere.init(radius: 0.5))
-        addGeometry(SCNPyramid.init(width: 1, height: 1, length: 1))
-        let cone = SCNCone.init(topRadius: 0.1, bottomRadius: 0.5, height: 1)
-        cone.radialSegmentCount = 3
-        addGeometry(cone)
-        addGeometry(SCNCylinder.init(radius: 0.5, height: 1))
-        addGeometry(SCNCapsule.init(capRadius: 0.1, height: 1))
-        addGeometry(SCNTube.init(innerRadius: 0.3, outerRadius: 0.5, height: 0.4))
-
-
-        //SCNText, SCNShape
-        let attrs: [NSAttributedStringKey: Any] = [ .font: UIFont.systemFont(ofSize: 1) ]
-        let textGeometry = SCNText.init(string: NSAttributedString.init(string: "handy\nTool", attributes: attrs), extrusionDepth: 0.4)
-        textGeometry.chamferRadius = 0.1
-        textGeometry.flatness = 0.5
-        addGeometry(textGeometry)
-
-        let shape = SCNShape.init(path: UIBezierPath.init(rect: CGRect.init(x: -0.5, y: 0.5, width: 1, height: 1)), extrusionDepth: 0.5)
-        addGeometry(shape)
+        addGeometry(Plane.init(size: CGPoint.init(x: 1, y: 1)))
+        addGeometry(PlaneUseIndice.init(size: CGPoint.init(x: 1, y: 1)))
+        addGeometry(Cube.init(size: SCNVector3.init(1, 1, 1)))
     }
 
     func addGeometry(_ geometry: SCNGeometry) {
         let node = SCNNode()
         node.geometry = geometry
-        let (minVec, maxVec) = node.boundingBox
-        node.position = SCNVector3.init(-(minVec.x + maxVec.x) / 2, -(minVec.y + maxVec.y) / 2, 0)
         geometryNodes.append(node)
     }
     

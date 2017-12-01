@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D30BDB91FD011C900D4A4BE /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30BDB81FD011C900D4A4BE /* Cube.swift */; };
+		3D30BDBD1FD1380800D4A4BE /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30BDBC1FD1380800D4A4BE /* Plane.swift */; };
+		3D30BDBF1FD1382500D4A4BE /* PlaneUseIndice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30BDBE1FD1382500D4A4BE /* PlaneUseIndice.swift */; };
 		3D7FBA071FC7EE7C00B699DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FBA061FC7EE7C00B699DC /* AppDelegate.swift */; };
 		3D7FBA091FC7EE7C00B699DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FBA081FC7EE7C00B699DC /* ViewController.swift */; };
 		3D7FBA0C1FC7EE7C00B699DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7FBA0A1FC7EE7C00B699DC /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D30BDB81FD011C900D4A4BE /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		3D30BDBC1FD1380800D4A4BE /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		3D30BDBE1FD1382500D4A4BE /* PlaneUseIndice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneUseIndice.swift; sourceTree = "<group>"; };
 		3D7FBA031FC7EE7C00B699DC /* LearnSceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7FBA061FC7EE7C00B699DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7FBA081FC7EE7C00B699DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +42,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D30BDB71FD011B300D4A4BE /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				3D30BDBC1FD1380800D4A4BE /* Plane.swift */,
+				3D30BDB81FD011C900D4A4BE /* Cube.swift */,
+				3D30BDBE1FD1382500D4A4BE /* PlaneUseIndice.swift */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
 		3D7FB9FA1FC7EE7C00B699DC = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +72,7 @@
 		3D7FBA051FC7EE7C00B699DC /* LearnSceneKit */ = {
 			isa = PBXGroup;
 			children = (
+				3D30BDB71FD011B300D4A4BE /* Geometry */,
 				3D7FBA061FC7EE7C00B699DC /* AppDelegate.swift */,
 				3D7FBA081FC7EE7C00B699DC /* ViewController.swift */,
 				3D7FBA0A1FC7EE7C00B699DC /* Main.storyboard */,
@@ -146,8 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D30BDBD1FD1380800D4A4BE /* Plane.swift in Sources */,
 				3D7FBA091FC7EE7C00B699DC /* ViewController.swift in Sources */,
+				3D30BDBF1FD1382500D4A4BE /* PlaneUseIndice.swift in Sources */,
 				3D7FBA071FC7EE7C00B699DC /* AppDelegate.swift in Sources */,
+				3D30BDB91FD011C900D4A4BE /* Cube.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
