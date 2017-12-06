@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         scene = SCNScene()
         scene.background.contents = UIColor.black
         createCamera()
-//        createLight()
+        createLight()
         createGeometries()
         nextGeometry(1)
 
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
 
             scnView.allowsCameraControl = true
             scnView.showsStatistics = true
-            scnView.autoenablesDefaultLighting = true
         }
         
     }
@@ -45,29 +44,17 @@ class ViewController: UIViewController {
     }
 
     func createLight() {
-        // red light
-        let redLightNode = SCNNode()
-        redLightNode.light = SCNLight()
-        redLightNode.light?.type = .omni
-        redLightNode.light?.color = UIColor.red
-        redLightNode.position = SCNVector3.init(6, 6, 3)
-        scene.rootNode.addChildNode(redLightNode)
+        let whiteLightNode = SCNNode()
+        whiteLightNode.light = SCNLight()
+        whiteLightNode.light?.type = .omni
+        whiteLightNode.light?.color = UIColor.white
+        whiteLightNode.position = SCNVector3.init(0, 6, 3)
+        scene.rootNode.addChildNode(whiteLightNode)
 
-        // green light
-        let greenLightNode = SCNNode()
-        greenLightNode.light = SCNLight()
-        greenLightNode.light?.type = .omni
-        greenLightNode.light?.color = UIColor.green
-        greenLightNode.position = SCNVector3.init(-6, 6, 3)
-        scene.rootNode.addChildNode(greenLightNode)
-
-        // blue light
-        let blueLightNode = SCNNode()
-        blueLightNode.light = SCNLight()
-        blueLightNode.light?.type = .omni
-        blueLightNode.light?.color = UIColor.blue
-        blueLightNode.position = SCNVector3.init(0, -6, 3)
-        scene.rootNode.addChildNode(blueLightNode)
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light?.type = .ambient
+        scene.rootNode.addChildNode(ambientLightNode)
     }
 
     @objc
@@ -87,14 +74,32 @@ class ViewController: UIViewController {
     }
 
     func createGeometries() {
-        addGeometry(Plane.init(size: CGPoint.init(x: 1, y: 1)))
-        addGeometry(PlaneUseIndice.init(size: CGPoint.init(x: 1, y: 1)))
-        addGeometry(Cube.init(size: SCNVector3.init(1, 1, 1)))
+        addGeometry(SCNSphere.init(radius: 0.5))
     }
 
     func addGeometry(_ geometry: SCNGeometry) {
         let node = SCNNode()
         node.geometry = geometry
+        let material = SCNMaterial()
+        material.lightingModel = .blinn
+        material.diffuse.contents = UIImage.init(named: "earth.jpg") //UIColor.red
+        material.ambient.contents = UIColor.init(white: 0.1, alpha: 1)
+        material.locksAmbientWithDiffuse = false
+        material.specular.contents = UIImage.init(named: "earth_specular.png") //UIColor.white
+
+        material.shininess = 1.0
+        material.reflective.contents = [
+            UIImage.init(named: "cube-1.jpg"),
+            UIImage.init(named: "cube-2.jpg"),
+            UIImage.init(named: "cube-3.jpg"),
+            UIImage.init(named: "cube-4.jpg"),
+            UIImage.init(named: "cube-5.jpg"),
+            UIImage.init(named: "cube-6.jpg"),
+        ]
+        material.fresnelExponent = 1.7
+
+        material.normal.contents = UIImage.init(named: "earth_NRM.png")
+        geometry.materials = [material]
         geometryNodes.append(node)
     }
     
