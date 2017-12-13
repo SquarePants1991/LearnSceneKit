@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     }
 
     func createGeometries() {
-        addGeometry(SCNSphere.init(radius: 0.5))
+//        addGeometry(SCNSphere.init(radius: 0.5))
         addGeometry(Cube.init(size: SCNVector3.init(1, 1, 1)))
     }
 
