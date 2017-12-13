@@ -18,11 +18,13 @@
 		E642C06C08F8706735CAA3EC /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E642C690795C18FABB80355A /* earth.jpg */; };
 		E642C14EF85A810C7EF9A757 /* earth_NRM.png in Resources */ = {isa = PBXBuildFile; fileRef = E642C80D2B07D5736D6EA774 /* earth_NRM.png */; };
 		E642C2632D628840B73A393E /* cube-6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E642CFBB2365C7336CBB8C02 /* cube-6.jpg */; };
+		E642C27473CD1571ED554476 /* NumberImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642C7F0AA733945689719D4 /* NumberImageGenerator.swift */; };
 		E642C3B78A67CDAF295F42B2 /* cube-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E642C87D9AA8926243E8129F /* cube-3.jpg */; };
 		E642C4672A10C2ABAFF44F0B /* cube-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E642C88D6B3B65907A80C1BF /* cube-2.jpg */; };
 		E642C61192F8CFB4DF787928 /* cube-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E642CDC659B9099223BF82E8 /* cube-1.jpg */; };
 		E642C7753F5EBB0ECCDB73B1 /* earth_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = E642C190486C6D70D59807D6 /* earth_specular.png */; };
 		E642CED64E995E7E43C23245 /* cube-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E642C03457456C55B234979E /* cube-5.jpg */; };
+		E642CEF5903F5A9B4421CF5E /* brick_NRM.png in Resources */ = {isa = PBXBuildFile; fileRef = E642C62CDD019D3BB81F1049 /* brick_NRM.png */; };
 		E642CFF410684F594604F42F /* cube-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E642CEFF08062110E7FFE745 /* cube-4.jpg */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +42,9 @@
 		3D7FBA191FC7F2B300B699DC /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		E642C03457456C55B234979E /* cube-5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-5.jpg"; sourceTree = "<group>"; };
 		E642C190486C6D70D59807D6 /* earth_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_specular.png; sourceTree = "<group>"; };
+		E642C62CDD019D3BB81F1049 /* brick_NRM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick_NRM.png; sourceTree = "<group>"; };
 		E642C690795C18FABB80355A /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
+		E642C7F0AA733945689719D4 /* NumberImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberImageGenerator.swift; sourceTree = "<group>"; };
 		E642C80D2B07D5736D6EA774 /* earth_NRM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_NRM.png; sourceTree = "<group>"; };
 		E642C87D9AA8926243E8129F /* cube-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-3.jpg"; sourceTree = "<group>"; };
 		E642C88D6B3B65907A80C1BF /* cube-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-2.jpg"; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				3D7FBA0F1FC7EE7C00B699DC /* LaunchScreen.storyboard */,
 				3D7FBA121FC7EE7C00B699DC /* Info.plist */,
 				E642CCC67A554B12AB1A2748 /* Resources */,
+				E642CE0CF964340FC4060CE2 /* Util */,
 			);
 			path = LearnSceneKit;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				E642C690795C18FABB80355A /* earth.jpg */,
 				E642C190486C6D70D59807D6 /* earth_specular.png */,
 				E642C80D2B07D5736D6EA774 /* earth_NRM.png */,
+				E642C62CDD019D3BB81F1049 /* brick_NRM.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -132,6 +138,14 @@
 				E642C126B9AE2F2A937FBF92 /* images */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E642CE0CF964340FC4060CE2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E642C7F0AA733945689719D4 /* NumberImageGenerator.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +219,7 @@
 				E642C06C08F8706735CAA3EC /* earth.jpg in Resources */,
 				E642C7753F5EBB0ECCDB73B1 /* earth_specular.png in Resources */,
 				E642C14EF85A810C7EF9A757 /* earth_NRM.png in Resources */,
+				E642CEF5903F5A9B4421CF5E /* brick_NRM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +235,7 @@
 				3D30BDBF1FD1382500D4A4BE /* PlaneUseIndice.swift in Sources */,
 				3D7FBA071FC7EE7C00B699DC /* AppDelegate.swift in Sources */,
 				3D30BDB91FD011C900D4A4BE /* Cube.swift in Sources */,
+				E642C27473CD1571ED554476 /* NumberImageGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

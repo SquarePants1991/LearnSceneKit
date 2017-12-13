@@ -75,31 +75,32 @@ class ViewController: UIViewController {
 
     func createGeometries() {
         addGeometry(SCNSphere.init(radius: 0.5))
+        addGeometry(Cube.init(size: SCNVector3.init(1, 1, 1)))
     }
 
     func addGeometry(_ geometry: SCNGeometry) {
         let node = SCNNode()
         node.geometry = geometry
-        let material = SCNMaterial()
-        material.lightingModel = .blinn
-        material.diffuse.contents = UIImage.init(named: "earth.jpg") //UIColor.red
-        material.ambient.contents = UIColor.init(white: 0.1, alpha: 1)
-        material.locksAmbientWithDiffuse = false
-        material.specular.contents = UIImage.init(named: "earth_specular.png") //UIColor.white
-
-        material.shininess = 1.0
-        material.reflective.contents = [
-            UIImage.init(named: "cube-1.jpg"),
-            UIImage.init(named: "cube-2.jpg"),
-            UIImage.init(named: "cube-3.jpg"),
-            UIImage.init(named: "cube-4.jpg"),
-            UIImage.init(named: "cube-5.jpg"),
-            UIImage.init(named: "cube-6.jpg"),
+        var materials: [SCNMaterial] = []
+        var colors: [UIColor] = [
+            UIColor.init(red: 0xff / 255.0, green: 0xe5 / 255.0, blue: 0.0, alpha: 1.0),
+            UIColor.init(red: 0xe9 / 255.0, green: 0.0, blue: 0x3a / 255.0, alpha: 1.0),
+            UIColor.init(red: 0x07 / 255.0, green: 0x76 / 255.0, blue: 0xa0 / 255.0, alpha: 1.0),
+            UIColor.init(red: 0xf4 / 255.0, green: 0x43 / 255.0, blue: 0x36 / 255.0, alpha: 1.0),
+            UIColor.init(red: 0x68 / 255.0, green: 0x9f / 255.0, blue: 0x38 / 255.0, alpha: 1.0),
+            UIColor.init(red: 0xef / 255.0, green: 0x6c / 255.0, blue: 0.0, alpha: 1.0),
         ]
-        material.fresnelExponent = 1.7
-
-        material.normal.contents = UIImage.init(named: "earth_NRM.png")
-        geometry.materials = [material]
+        for i in 0..<6 {
+            let material = SCNMaterial()
+            material.lightingModel = .blinn
+            let diffuseMap = NumberImageGenerator.createImage(number: i + 1, foregroundColor: colors[(i + 1) % colors.count], backgroundColor: colors[i % colors.count], size: CGSize.init(width: 128, height: 128))
+            material.diffuse.contents = diffuseMap
+            material.diffuse.minificationFilter = .nearest
+            material.diffuse.magnificationFilter = .nearest
+            material.shininess = 1.0
+            materials.append(material)
+        }
+        geometry.materials = materials
         geometryNodes.append(node)
     }
     
